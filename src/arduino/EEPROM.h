@@ -6,6 +6,8 @@ struct EEPROMClass {
   virtual void write(int idx, uint8_t val);
   virtual void update(int idx, uint8_t val);
   virtual uint16_t length();
+  template< typename T > T &get( int idx, T &t ) { return t; };
+  template< typename T > const T &put( int idx, const T &t ) { return t; };
   /*
   EERef operator[](const int idx);
 
